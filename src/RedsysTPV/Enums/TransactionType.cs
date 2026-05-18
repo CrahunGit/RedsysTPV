@@ -44,6 +44,9 @@ namespace RedsysTPV.Enums
         DevolucionSinOriginal,
 
         [Description("37")]
-        PremioDeApuestas
+        PremioDeApuestas,
+
+        [Description("44")]
+        ConsultaOperaciones
     }
 }

@@ -11,13 +11,12 @@ namespace System
     {
         public static string GetDescription(this Enum value)
         {
-            FieldInfo field = value.GetType().GetField(value.ToString());
+            if (Attribute.GetCustomAttribute(value.GetType().GetField(value.ToString()), typeof(DescriptionAttribute)) is DescriptionAttribute d)
+            {
+                return d.Description;
+            }
 
-            DescriptionAttribute attribute
-                    = Attribute.GetCustomAttribute(field, typeof(DescriptionAttribute))
-                        as DescriptionAttribute;
-
-            return attribute == null ? value.ToString() : attribute.Description;
+            return value.ToString();
         }
     }
 
