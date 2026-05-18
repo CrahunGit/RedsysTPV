@@ -3,16 +3,23 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>RedsysTPV.NetStandard</AssemblyName>
-    <Version>3.2.0</Version>
+    <Version>3.2.1</Version>
     <PackageProjectUrl>https://github.com/CrahunGit/RedsysTPV</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/CrahunGit/RedsysTPV/master/redsys.png</PackageIconUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/CrahunGit/RedsysTPV/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageIcon>redsys.png</PackageIcon>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/CrahunGit/RedsysTPV</RepositoryUrl>
     <Description>A Redysys TPV lbrary for .NET Standard. It supports SHA256.</Description>
     <Authors>Crahun</Authors>
     <Company>Crahun</Company>
-    <AssemblyVersion>3.2.0.0</AssemblyVersion>
+    <AssemblyVersion>3.2.1.0</AssemblyVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\redsys.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\LICENSE.txt" Pack="true" PackagePath="\" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Text.Json" Version="5.0.0" />
