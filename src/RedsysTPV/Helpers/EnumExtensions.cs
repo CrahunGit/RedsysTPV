@@ -29,7 +29,26 @@ namespace System
 
         public override T Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return (T)Enum.ToObject(typeof(T), Convert.ToInt32(reader.GetString()));
+            var str = reader.GetString();
+
+            // Try to match against [Description] attribute values
+            foreach (var field in typeof(T).GetFields(BindingFlags.Public | BindingFlags.Static))
+            {
+                if (field.GetCustomAttribute<DescriptionAttribute>() is DescriptionAttribute d && d.Description == str)
+                {
+                    return (T)field.GetValue(null);
+                }
+            }
+
+            // Try to match by enum member name (case-insensitive)
+            try
+            {
+                return (T)Enum.Parse(typeof(T), str, ignoreCase: true);
+            }
+            catch (ArgumentException) { }
+
+            // Fall back to integer parsing for numeric strings
+            return (T)Enum.ToObject(typeof(T), Convert.ToInt32(str));
         }
     }
 
