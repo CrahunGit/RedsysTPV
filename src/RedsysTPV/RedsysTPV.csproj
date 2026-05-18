@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>RedsysTPV.NetStandard</AssemblyName>
-    <Version>3.1.0</Version>
+    <Version>3.2.0</Version>
     <PackageProjectUrl>https://github.com/CrahunGit/RedsysTPV</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/CrahunGit/RedsysTPV/master/redsys.png</PackageIconUrl>
     <PackageLicenseUrl>https://raw.githubusercontent.com/CrahunGit/RedsysTPV/master/LICENSE.txt</PackageLicenseUrl>
@@ -11,7 +11,7 @@
     <Description>A Redysys TPV lbrary for .NET Standard. It supports SHA256.</Description>
     <Authors>Crahun</Authors>
     <Company>Crahun</Company>
-    <AssemblyVersion>3.1.0.0</AssemblyVersion>
+    <AssemblyVersion>3.2.0.0</AssemblyVersion>
   </PropertyGroup>
 
   <ItemGroup>
